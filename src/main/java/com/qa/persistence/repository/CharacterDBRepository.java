@@ -47,7 +47,9 @@ public class CharacterDBRepository implements CharacterRepository {
 	
 	public String createCharacter(String character) {
 		// TODO Auto-generated method stub
-		return null;
+		Character newChar = util.getObjectForJSON(character, Character.class);
+		manager.persist(newChar);
+		return "Character created.";
 	}
 	
 	public String getAllCharacters() {
