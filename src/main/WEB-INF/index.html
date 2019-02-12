@@ -1,0 +1,14 @@
+<html>
+<head>
+	<script>
+		let xhr = new XMLHttpRequest();
+		xhr.opem("GET", "api/recipe/getAllrecipes");
+		xhr.onload = () => {
+			document.write(xhr.responseText);
+		}
+		xhr.send();
+	</script>
+</head>
+<body>
+</body>
+</htmal>
