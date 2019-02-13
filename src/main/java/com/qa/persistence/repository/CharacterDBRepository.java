@@ -44,13 +44,14 @@ public class CharacterDBRepository implements CharacterRepository {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	@Transactional(REQUIRED)
 	public String createCharacter(String character) {
 		// TODO Auto-generated method stub
 		Character newChar = util.getObjectForJSON(character, Character.class);
 		manager.persist(newChar);
-		return "Character created.";
+		return "{\"message\": \"Character created.\"}";
 	}
+	
 	
 	public String getAllCharacters() {
 		// TODO Auto-generated method stub
@@ -58,17 +59,21 @@ public class CharacterDBRepository implements CharacterRepository {
 		Collection<Character> characters = (Collection<Character>) query.getResultList();
 		return util.getJSONForObject(characters);
 	}
-
+	
+	
 	public String getACharacter(Long id) {
 		// TODO Auto-generated method stub
 		return util.getJSONForObject(manager.find(Character.class, id));
 	}
-
+	
+	@Transactional(REQUIRED)
 	public String updateCharacter(String character, Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		deleteCharacter(id);
+		createCharacter(character);
+		return character;
 	}
 
+	@Transactional(REQUIRED)
 	public String deleteCharacter(Long id) {
 		// TODO Auto-generated method stub
 		Character characterInDB = util.getObjectForJSON(getACharacter(id), Character.class);
