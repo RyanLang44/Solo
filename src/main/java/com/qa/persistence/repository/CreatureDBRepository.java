@@ -20,9 +20,9 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
-import com.qa.persistence.domain.Character;
+import com.qa.persistence.domain.Creature;
 //import com.qa.business.service.RecipeService;
-import com.qa.persistence.domain.Character;
+import com.qa.persistence.domain.Creature;
 import com.qa.util.JSONUtil;
 
 import okhttp3.OkHttpClient;
@@ -32,7 +32,7 @@ import okhttp3.ResponseBody;
 
 @Transactional(SUPPORTS)
 @Default
-public class CharacterDBRepository implements CharacterRepository {
+public class CreatureDBRepository implements CreatureRepository {
 	
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
@@ -40,14 +40,14 @@ public class CharacterDBRepository implements CharacterRepository {
 	@Inject
 	private JSONUtil util;
 
-	public CharacterDBRepository() {
+	public CreatureDBRepository() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Transactional(REQUIRED)
 	public String createCharacter(String character) {
 		// TODO Auto-generated method stub
-		Character newChar = util.getObjectForJSON(character, Character.class);
+		Creature newChar = util.getObjectForJSON(character, Creature.class);
 		manager.persist(newChar);
 		return "{\"message\": \"Character created.\"}";
 	}
@@ -56,14 +56,14 @@ public class CharacterDBRepository implements CharacterRepository {
 	public String getAllCharacters() {
 		// TODO Auto-generated method stub
 		Query query = manager.createQuery("Select a FROM character a");
-		Collection<Character> characters = (Collection<Character>) query.getResultList();
+		Collection<Creature> characters = (Collection<Creature>) query.getResultList();
 		return util.getJSONForObject(characters);
 	}
 	
 	
 	public String getACharacter(Long id) {
 		// TODO Auto-generated method stub
-		return util.getJSONForObject(manager.find(Character.class, id));
+		return util.getJSONForObject(manager.find(Creature.class, id));
 	}
 	
 	@Transactional(REQUIRED)
@@ -76,10 +76,10 @@ public class CharacterDBRepository implements CharacterRepository {
 	@Transactional(REQUIRED)
 	public String deleteCharacter(Long id) {
 		// TODO Auto-generated method stub
-		Character characterInDB = util.getObjectForJSON(getACharacter(id), Character.class);
+		Creature characterInDB = util.getObjectForJSON(getACharacter(id), Creature.class);
 		
-		if (manager.contains(manager.find(Character.class, id))) {
-			manager.remove((manager.find(Character.class, id)));
+		if (manager.contains(manager.find(Creature.class, id))) {
+			manager.remove((manager.find(Creature.class, id)));
 		}
 		
 		return "{\"message\": \"character successfully deleted\"}";
