@@ -20,6 +20,8 @@ public class Creature {
 	private int magic;
 	private int speed;
 	private int statLimit;
+	private int statTotal;
+	
 	
 
 	public Creature() {
@@ -128,8 +130,6 @@ public class Creature {
 	}
 
 
-	private int statTotal;
-	
 
 	
 
