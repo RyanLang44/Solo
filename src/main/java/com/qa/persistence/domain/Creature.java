@@ -28,8 +28,8 @@ public class Creature {
 		
 	}
 
-	public Creature(String charName, int hitPoints, int magicPoints, int attack, int magic, int speed, int statLimit,
-			int statTotal) {
+	public Creature(String charName, int hitPoints, int magicPoints, int attack, int magic, int speed)
+			 {
 		this.id =id;
 		this.charName = charName;
 		this.hitPoints = hitPoints;
@@ -38,7 +38,7 @@ public class Creature {
 		this.magic = magic;
 		this.speed = speed;
 		this.statLimit = 60;
-		this.statTotal = hitPoints + magicPoints + attack + magic + speed;
+		this.statTotal = (hitPoints + magicPoints + attack + magic + speed);
 	}
 	
 	public Long getId() {

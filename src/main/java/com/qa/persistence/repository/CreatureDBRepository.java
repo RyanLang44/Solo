@@ -20,6 +20,7 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
+
 import com.qa.persistence.domain.Creature;
 //import com.qa.business.service.RecipeService;
 import com.qa.persistence.domain.Creature;
@@ -68,9 +69,11 @@ public class CreatureDBRepository implements CreatureRepository {
 	
 	@Transactional(REQUIRED)
 	public String updateCharacter(String character, Long id) {
+		Creature temp = new Creature();
+		temp = util.getObjectForJSON(character, Creature.class);
+		manager.persist(temp);
 		deleteCharacter(id);
-		createCharacter(character);
-		return character;
+		return "{\"message\": \"Character updated.\"}";
 	}
 
 	@Transactional(REQUIRED)
@@ -82,7 +85,17 @@ public class CreatureDBRepository implements CreatureRepository {
 			manager.remove((manager.find(Creature.class, id)));
 		}
 		
-		return "{\"message\": \"character successfully deleted\"}";
+		return "{\"message\": \"Character deleted.\"}";
+	}
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+		
+	}
+
+	public void setUtil(JSONUtil util) {
+		this.util = util;
+		
 	}
 
 }
