@@ -10,8 +10,8 @@ public class CreatureServiceImpl implements CreatureService {
 
 	@Inject
 	private CreatureRepository repo;
-	// @Inject
-	JSONUtil util = new JSONUtil();
+	 @Inject
+	JSONUtil util;
 
 	public CreatureServiceImpl() {
 		// TODO Auto-generated constructor stub
