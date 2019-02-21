@@ -16,22 +16,34 @@ public class Move {
 	private int damage;
 	private int noOfTargets;
 	private int healing;
+	private int mpCost;
 	
 	
 	
-	public Move(String moveName, String desc, int damage, int noOfTargets, int healing) {
+	public Move(String moveName, String desc, int damage, int noOfTargets, int healing, int mpCost) {
 		this.id = id;
 		this.moveName = moveName;
 		this.desc = desc;
 		this.damage = damage;
 		this.noOfTargets = noOfTargets;
 		this.healing = healing;
+		this.mpCost = mpCost;
 	}
 	
 	public Move() {
 		
 	}
 	
+	
+	
+	public int getMpCost() {
+		return mpCost;
+	}
+
+	public void setMpCost(int mpCost) {
+		this.mpCost = mpCost;
+	}
+
 	public Long getId() {
 		return id;
 	}

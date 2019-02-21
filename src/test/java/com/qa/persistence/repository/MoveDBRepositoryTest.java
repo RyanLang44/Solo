@@ -33,9 +33,9 @@ public class MoveDBRepositoryTest {
 	
 	private JSONUtil util;
 	
-	private static final String MOCK_OBJECT = "{\"moveName\":\"Flame Breath\",\"desc\":\"fire comes out of mouth\",\"damage\":10,\"noOfTargets\":5,\"healing\":0}";
+	private static final String MOCK_OBJECT = "{\"moveName\":\"Flame Breath\",\"desc\":\"fire comes out of mouth\",\"damage\":10,\"noOfTargets\":5,\"healing\":0,\"mpCost\":5}";
 	
-	private static final String MOCK_DATA_ARRAY ="[{\"moveName\":\"Flame Breath\",\"desc\":\"fire comes out of mouth\",\"damage\":10,\"noOfTargets\":5,\"healing\":0}]";
+	private static final String MOCK_DATA_ARRAY ="[{\"moveName\":\"Flame Breath\",\"desc\":\"fire comes out of mouth\",\"damage\":10,\"noOfTargets\":5,\"healing\":0,\"mpCost\":5}]";
 
 	@Before
 	public void setup() {
@@ -46,7 +46,7 @@ public class MoveDBRepositoryTest {
 	
 	@Test
 	public void testGetAllMoves() {
-		Move test1 = new Move("Flame Breath", "fire comes out of mouth", 10, 5, 0);
+		Move test1 = new Move("Flame Breath", "fire comes out of mouth", 10, 5, 0, 5);
 		Mockito.when(manager.createQuery(Mockito.anyString())).thenReturn(query);
 		List<Move> moves = new ArrayList<Move>();
 		moves.add(test1);
