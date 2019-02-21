@@ -18,40 +18,34 @@ public class CreatureServiceImpl implements CreatureService {
 	}
 
 	@Override
-	public String addCharacter(String character) {
+	public String addCreature(String creature) {
 		// TODO Auto-generated method stub
-		Creature newChar = util.getObjectForJSON(character, Creature.class);
-		if ((newChar.getStatTotal()) > (newChar.getStatLimit())) {
-
-			return "{\"message\": \"This creature is too powerful\"}";
-
-		}
-
-		return repo.createCharacter(character);
+		Creature newChar = util.getObjectForJSON(creature, Creature.class);
+		return repo.createCreature(creature);
 	}
 
 	@Override
-	public String getAllCharacters() {
+	public String getAllCreatures() {
 		// TODO Auto-generated method stub
-		return repo.getAllCharacters();
+		return repo.getAllCreatures();
 	}
 
 	@Override
-	public String getACharacter(Long id) {
+	public String getACreature(Long id) {
 		// TODO Auto-generated method stub
-		return repo.getACharacter(id);
+		return repo.getACreature(id);
 	}
 
 	@Override
-	public String updateCharacter(String character, Long id) {
+	public String updateCreature(String creature, Long id) {
 		// TODO Auto-generated method stub
-		return repo.updateCharacter(character, id);
+		return repo.updateCreature(creature, id);
 	}
 
 	@Override
-	public String deleteCharacter(Long id) {
+	public String deleteCreature(Long id) {
 		// TODO Auto-generated method stub
-		return repo.deleteCharacter(id);
+		return repo.deleteCreature(id);
 	}
 
 	public void setRepo(CreatureRepository repo) {

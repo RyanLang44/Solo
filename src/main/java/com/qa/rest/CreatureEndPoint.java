@@ -17,40 +17,40 @@ public class CreatureEndPoint {
 	@Inject
 	private CreatureService service;
 	
-	@Path("/getAllCharacters")
+	@Path("/getAllCreatures")
 	@GET
 	@Produces({ "application/json" })
-	public String getAllCharacters() {
-		return service.getAllCharacters();
+	public String getAllCreatures() {
+		return service.getAllCreatures();
 	}
 	
-	@Path("/getACharacter/{id}")
+	@Path("/getACreature/{id}")
 	@GET
 	@Produces ({ "application/json" })
-	public String getACharacter(@PathParam("id") Long id) {
-		return service.getACharacter(id);
+	public String getACreature(@PathParam("id") Long id) {
+		return service.getACreature(id);
 	}
 	
-	@Path("/createCharacter")
+	@Path("/createCreature")
 	@POST 
 	@Produces ({ "application/json" })
-	public String addCharacter(String character) {
-		return service.addCharacter(character);
+	public String addCreature(String creatue) {
+		return service.addCreature(creatue);
 	}
 	
-	@Path("/deleteCharacter/{id}")
+	@Path("/deleteCreature/{id}")
 	@DELETE
 	@Produces ({ "application/json" })
-	public String deleteCharacter(@PathParam("id") Long id) {
-		return service.deleteCharacter(id);
+	public String deleteCreature(@PathParam("id") Long id) {
+		return service.deleteCreature(id);
 	}
 	
-	@Path("/updateCharacter/{id}")
+	@Path("/updateCreature/{id}")
 	@PUT
 	@Produces ({ "application/json" })
-	public String updateCharacter(@PathParam("id") Long id, String character) {
+	public String updateCreature(@PathParam("id") Long id, String creatue) {
 		
-		return service.updateCharacter(character, id);
+		return service.updateCreature(creatue, id);
 	}
 	
 	public void setService(CreatureService service) {

@@ -46,46 +46,46 @@ public class CreatureDBRepository implements CreatureRepository {
 	}
 	
 	@Transactional(REQUIRED)
-	public String createCharacter(String character) {
+	public String createCreature(String creature) {
 		// TODO Auto-generated method stub
-		Creature newChar = util.getObjectForJSON(character, Creature.class);
+		Creature newChar = util.getObjectForJSON(creature, Creature.class);
 		manager.persist(newChar);
-		return "{\"message\": \"Character created.\"}";
+		return "{\"message\": \"Creature created.\"}";
 	}
 	
 	
-	public String getAllCharacters() {
+	public String getAllCreatures() {
 		// TODO Auto-generated method stub
-		Query query = manager.createQuery("Select a FROM character a");
-		Collection<Creature> characters = (Collection<Creature>) query.getResultList();
-		return util.getJSONForObject(characters);
+		Query query = manager.createQuery("Select a FROM Creature a");
+		Collection<Creature> creatures = (Collection<Creature>) query.getResultList();
+		return util.getJSONForObject(creatures);
 	}
 	
 	
-	public String getACharacter(Long id) {
+	public String getACreature(Long id) {
 		// TODO Auto-generated method stub
 		return util.getJSONForObject(manager.find(Creature.class, id));
 	}
 	
 	@Transactional(REQUIRED)
-	public String updateCharacter(String character, Long id) {
+	public String updateCreature(String creature, Long id) {
 		Creature temp = new Creature();
-		temp = util.getObjectForJSON(character, Creature.class);
+		temp = util.getObjectForJSON(creature, Creature.class);
 		manager.persist(temp);
-		deleteCharacter(id);
-		return "{\"message\": \"Character updated.\"}";
+		deleteCreature(id);
+		return "{\"message\": \"Creature updated.\"}";
 	}
 
 	@Transactional(REQUIRED)
-	public String deleteCharacter(Long id) {
+	public String deleteCreature(Long id) {
 		// TODO Auto-generated method stub
-		Creature characterInDB = util.getObjectForJSON(getACharacter(id), Creature.class);
+		Creature creatureInDB = util.getObjectForJSON(getACreature(id), Creature.class);
 		
 		if (manager.contains(manager.find(Creature.class, id))) {
 			manager.remove((manager.find(Creature.class, id)));
 		}
 		
-		return "{\"message\": \"Character deleted.\"}";
+		return "{\"message\": \"Creature deleted.\"}";
 	}
 
 	public void setManager(EntityManager manager) {
@@ -97,5 +97,7 @@ public class CreatureDBRepository implements CreatureRepository {
 		this.util = util;
 		
 	}
+
+
 
 }

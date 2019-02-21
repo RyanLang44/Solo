@@ -2,14 +2,14 @@ package com.qa.business.service;
 
 public interface CreatureService {
 	
-	String addCharacter(String character);
+	String addCreature(String creature);
 	
-	String getAllCharacters();
+	String getAllCreatures();
 	
-	String getACharacter(Long id);
+	String getACreature(Long id);
 	
-	String updateCharacter(String character, Long id);
+	String updateCreature(String creature, Long id);
 	
-	String deleteCharacter(Long id);
+	String deleteCreature(Long id);
 
 }

@@ -19,8 +19,7 @@ public class Creature {
 	private int attack;
 	private int magic;
 	private int speed;
-	private int statLimit;
-	private int statTotal;
+	
 	
 	
 
@@ -37,8 +36,7 @@ public class Creature {
 		this.attack = attack;
 		this.magic = magic;
 		this.speed = speed;
-		this.statLimit = 60;
-		this.statTotal = (hitPoints + magicPoints + attack + magic + speed);
+		
 	}
 	
 	public Long getId() {
@@ -108,32 +106,6 @@ public class Creature {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-
-
-	public int getStatLimit() {
-		return statLimit;
-	}
-
-
-	public void setStatLimit(int statLimit) {
-		this.statLimit = statLimit;
-	}
-
-
-	public int getStatTotal() {
-		return statTotal;
-	}
-
-
-	public void setStatTotal(int statTotal) {
-		this.statTotal = statTotal;
-	}
-
-
-
-	
-
-	
 
 }
 
