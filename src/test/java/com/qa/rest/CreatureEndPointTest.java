@@ -30,35 +30,35 @@ public class CreatureEndPointTest {
 	}
 	
 	@Test
-	public void testGetAllCharacters() {
-		Mockito.when(service.getAllCharacters()).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.getAllCharacters());
+	public void testGetAllCreatures() {
+		Mockito.when(service.getAllCreatures()).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.getAllCreatures());
 	}
 	
 	@Test
-	public void testGetACharacter() {
-		Mockito.when(service.getACharacter(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.getACharacter(1L));
+	public void testGetACreature() {
+		Mockito.when(service.getACreature(1L)).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.getACreature(1L));
 	}
 	
 	@Test 
-	public void testCreateCharacter() {
-		Mockito.when(service.addCharacter(MOCK_VALUE2)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.addCharacter(MOCK_VALUE2));
-		Mockito.verify(service).addCharacter(MOCK_VALUE2);
+	public void testCreateCreature() {
+		Mockito.when(service.addCreature(MOCK_VALUE2)).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.addCreature(MOCK_VALUE2));
+		Mockito.verify(service).addCreature(MOCK_VALUE2);
 	}
 	
 	@Test
-	public void testDeleteCharacter() {
-		Mockito.when(service.deleteCharacter(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.deleteCharacter(1L));
-		Mockito.verify(service).deleteCharacter(1L);
+	public void testDeleteCreature() {
+		Mockito.when(service.deleteCreature(1L)).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.deleteCreature(1L));
+		Mockito.verify(service).deleteCreature(1L);
 	}
 	
 	@Test
-	public void testUpdateCharacter() {
-		Mockito.when(service.updateCharacter(MOCK_VALUE2, 1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.updateCharacter(1L, MOCK_VALUE2));
+	public void testUpdateCreature() {
+		Mockito.when(service.updateCreature(MOCK_VALUE2, 1L)).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.updateCreature(1L, MOCK_VALUE2));
 	}
 
 

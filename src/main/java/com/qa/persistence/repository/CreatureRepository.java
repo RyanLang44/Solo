@@ -2,14 +2,14 @@ package com.qa.persistence.repository;
 
 public interface CreatureRepository {
 	
-	String createCharacter(String character);
+	String createCreature(String creature);
 	
-	String getAllCharacters();
+	String getAllCreatures();
 	
-	String getACharacter(Long id);
+	String getACreature(Long id);
 	
-	String updateCharacter(String character, Long id);
+	String updateCreature(String creature, Long id);
 	
-	String deleteCharacter(Long id);
+	String deleteCreature(Long id);
 
 }

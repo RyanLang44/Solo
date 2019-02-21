@@ -1,4 +1,2 @@
-INSERT INTO RECIPE (recipeName, author, ingredients) VALUES ('Tablet', 'Mark', 'sugar, butter')
-INSERT INTO RECIPE (recipeName, author, ingredients) VALUES ('Burger', 'Gabby', 'onion, mince, cheese')
-INSERT INTO RECIPE (recipeName, author, ingredients) VALUES ('Schnitzel', 'Lucy', 'breadcrumbs, pork, egg')
-INSERT INTO RECIPE (recipeName, author, ingredients) VALUES ('Sushi', 'Eloise', 'salmon, rice, seaweed')
+INSERT INTO CREATURE (charName, hitPoints, magicPoints, attack, magic, speed) VALUES ('Mark', '20', '5', '10', '5','20')
+INSERT INTO CREATURE (charName, hitPoints, magicPoints, attack, magic, speed) VALUES ('Lucy', '10', '20', '5', '20','5')
