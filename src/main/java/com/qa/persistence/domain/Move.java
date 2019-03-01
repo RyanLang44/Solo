@@ -21,10 +21,7 @@ public class Move {
 	private int healing;
 	private int mpCost;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="CREATURE_ID")
-	private Creature user;
-	
+
 	
 	
 	public Move(String moveName, String desc, int damage, int noOfTargets, int healing, int mpCost) {
