@@ -34,9 +34,9 @@ public class CreatureDBRepoTest {
 	
 	private JSONUtil util;
 	
-	private static final String MOCK_OBJECT = "{\"charName\":\"Frank\",\"hitPoints\":10,\"magicPoints\":10,\"attack\":2,\"magic\":3,\"speed\":4}";
+	private static final String MOCK_OBJECT = "{\"charName\":\"Frank\",\"hitPoints\":10,\"magicPoints\":10,\"attack\":2,\"magic\":3,\"speed\":4,\"moves\":[]}";
 	
-	private static final String MOCK_DATA_ARRAY ="[{\"charName\":\"Frank\",\"hitPoints\":10,\"magicPoints\":10,\"attack\":2,\"magic\":3,\"speed\":4}]";
+	private static final String MOCK_DATA_ARRAY ="[{\"charName\":\"Frank\",\"hitPoints\":10,\"magicPoints\":10,\"attack\":2,\"magic\":3,\"speed\":4,\"moves\":[]}]";
 
 	@Before
 	public void setup() {
