@@ -26,7 +26,7 @@ public class Creature {
 	private int speed;
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "fk_classroom")
+	@JoinColumn(name = "fk_creature")
 	private List<Move> moves = new ArrayList<>();
 	
 	
