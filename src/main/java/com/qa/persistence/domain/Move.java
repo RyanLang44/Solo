@@ -1,9 +1,12 @@
 package com.qa.persistence.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Move {
@@ -18,6 +21,7 @@ public class Move {
 	private int healing;
 	private int mpCost;
 	
+
 	
 	
 	public Move(String moveName, String desc, int damage, int noOfTargets, int healing, int mpCost) {
