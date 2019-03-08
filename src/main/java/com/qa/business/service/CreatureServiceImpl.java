@@ -31,21 +31,21 @@ public class CreatureServiceImpl implements CreatureService {
 	}
 
 	@Override
-	public String getACreature(Long id) {
+	public String getACreature(String charName) {
 		// TODO Auto-generated method stub
-		return repo.getACreature(id);
+		return repo.getACreature(charName);
 	}
 
 	@Override
-	public String updateCreature(String creature, Long id) {
+	public String updateCreature(String creature, String charName) {
 		// TODO Auto-generated method stub
-		return repo.updateCreature(creature, id);
+		return repo.updateCreature(creature, charName);
 	}
 
 	@Override
-	public String deleteCreature(Long id) {
+	public String deleteCreature(String charName) {
 		// TODO Auto-generated method stub
-		return repo.deleteCreature(id);
+		return repo.deleteCreature(charName);
 	}
 
 	public void setRepo(CreatureRepository repo) {
