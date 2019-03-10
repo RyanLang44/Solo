@@ -27,8 +27,8 @@ public class CreatureEndPoint {
 	@Path("/getACreature/{id}")
 	@GET
 	@Produces ({ "application/json" })
-	public String getACreature(@PathParam("id") Long id) {
-		return service.getACreature(id);
+	public String getACreature(@PathParam("id") String charName) {
+		return service.getACreature(charName);
 	}
 	
 	@Path("/createCreature")
@@ -41,16 +41,16 @@ public class CreatureEndPoint {
 	@Path("/deleteCreature/{id}")
 	@DELETE
 	@Produces ({ "application/json" })
-	public String deleteCreature(@PathParam("id") Long id) {
-		return service.deleteCreature(id);
+	public String deleteCreature(@PathParam("id") String charName) {
+		return service.deleteCreature(charName);
 	}
 	
 	@Path("/updateCreature/{id}")
 	@PUT
 	@Produces ({ "application/json" })
-	public String updateCreature(@PathParam("id") Long id, String creatue) {
+	public String updateCreature(@PathParam("id") String charName, String creatue) {
 		
-		return service.updateCreature(creatue, id);
+		return service.updateCreature(creatue, charName);
 	}
 	
 	public void setService(CreatureService service) {

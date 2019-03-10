@@ -6,9 +6,9 @@ public interface MoveService {
 	
 	String getAllMoves();
 	
-	String getAMove(Long id);
+	String getAMove(String moveName);
 	
-	String updateMove(String move, Long id);
+	String updateMove(String move, String moveName);
 	
-	String deleteMove(Long id);
+	String deleteMove(String moveName);
 }

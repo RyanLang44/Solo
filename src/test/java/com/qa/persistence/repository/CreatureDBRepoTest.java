@@ -57,8 +57,8 @@ public class CreatureDBRepoTest {
 	
 	@Test
 	public void testGetACreature() {
-	Mockito.when(manager.find(Creature.class, 1L)).thenReturn(util.getObjectForJSON(MOCK_OBJECT, Creature.class));
-	assertEquals(MOCK_OBJECT, repo.getACreature(1L));
+	Mockito.when(manager.find(Creature.class, "Frank")).thenReturn(util.getObjectForJSON(MOCK_OBJECT, Creature.class));
+	assertEquals(MOCK_OBJECT, repo.getACreature("Frank"));
 	}
 	
 	@Test
@@ -69,12 +69,12 @@ public class CreatureDBRepoTest {
 	
 	@Test
 	public void testDeleteCreature() {
-		String reply = repo.deleteCreature(1L);
+		String reply = repo.deleteCreature("Frank");
 		assertEquals(reply,"{\"message\": \"Creature deleted.\"}");
 	}
 	
 	@Test
 	public void testUpdateCreature() {
-		assertEquals("{\"message\": \"Creature updated.\"}", repo.updateCreature(MOCK_OBJECT, 1L));
+		assertEquals("{\"message\": \"Creature updated.\"}", repo.updateCreature(MOCK_OBJECT, "Frank"));
 	}
 }

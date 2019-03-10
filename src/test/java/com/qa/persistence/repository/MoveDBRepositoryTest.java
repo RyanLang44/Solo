@@ -56,8 +56,8 @@ public class MoveDBRepositoryTest {
 	
 	@Test
 	public void testGetAMove() {
-	Mockito.when(manager.find(Move.class, 1L)).thenReturn(util.getObjectForJSON(MOCK_OBJECT, Move.class));
-	assertEquals(MOCK_OBJECT, repo.getAMove(1L));
+	Mockito.when(manager.find(Move.class, "Flame Breath")).thenReturn(util.getObjectForJSON(MOCK_OBJECT, Move.class));
+	assertEquals(MOCK_OBJECT, repo.getAMove("Flame Breath"));
 	}
 	
 	@Test
@@ -68,13 +68,13 @@ public class MoveDBRepositoryTest {
 	
 	@Test
 	public void testDeleteMove() {
-		String reply = repo.deleteMove(1L);
+		String reply = repo.deleteMove("Flame Breath");
 		assertEquals(reply,"{\"message\": \"Move deleted.\"}");
 	}
 	
 	@Test
 	public void testUpdateMove() {
-		assertEquals("{\"message\": \"Move updated.\"}", repo.updateMove(MOCK_OBJECT, 1L));
+		assertEquals("{\"message\": \"Move updated.\"}", repo.updateMove(MOCK_OBJECT, "Flame Breath"));
 	}
 	
 }

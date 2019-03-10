@@ -28,8 +28,8 @@ public class MoveEndPoint {
 	@Path("/getAMove/{id}")
 	@GET
 	@Produces ({ "application/json" })
-	public String getAMove(@PathParam("id") Long id) {
-		return service.getAMove(id);
+	public String getAMove(@PathParam("id") String moveName) {
+		return service.getAMove(moveName);
 	}
 	
 	@Path("/createMove")
@@ -42,16 +42,16 @@ public class MoveEndPoint {
 	@Path("/deleteMove/{id}")
 	@DELETE
 	@Produces ({ "application/json" })
-	public String deleteMove(@PathParam("id") Long id) {
-		return service.deleteMove(id);
+	public String deleteMove(@PathParam("id") String moveName) {
+		return service.deleteMove(moveName);
 	}
 	
 	@Path("/updateMove/{id}")
 	@PUT
 	@Produces ({ "application/json" })
-	public String updateMove(@PathParam("id") Long id, String move) {
+	public String updateMove(@PathParam("id") String moveName, String move) {
 		
-		return service.updateMove(move, id);
+		return service.updateMove(move, moveName);
 	}
 	
 	public void setService(MoveService service) {

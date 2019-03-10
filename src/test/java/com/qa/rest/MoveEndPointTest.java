@@ -37,8 +37,8 @@ public class MoveEndPointTest {
 	
 	@Test
 	public void testGetAMove() {
-		Mockito.when(service.getAMove(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.getAMove(1L));
+		Mockito.when(service.getAMove("Healing Touch")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.getAMove("Healing Touch"));
 	}
 	
 	@Test 
@@ -50,15 +50,15 @@ public class MoveEndPointTest {
 	
 	@Test
 	public void testDeleteMove() {
-		Mockito.when(service.deleteMove(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.deleteMove(1L));
-		Mockito.verify(service).deleteMove(1L);
+		Mockito.when(service.deleteMove("Healing Touch")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.deleteMove("Healing Touch"));
+		Mockito.verify(service).deleteMove("Healing Touch");
 	}
 	
 	@Test
 	public void testUpdateMove() {
-		Mockito.when(service.updateMove(MOCK_VALUE2, 1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.updateMove(1L, MOCK_VALUE2));
+		Mockito.when(service.updateMove(MOCK_VALUE2, "Healing Touch")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.updateMove("Healing Touch", MOCK_VALUE2));
 	}
 
 	

@@ -37,8 +37,8 @@ public class CreatureEndPointTest {
 	
 	@Test
 	public void testGetACreature() {
-		Mockito.when(service.getACreature(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.getACreature(1L));
+		Mockito.when(service.getACreature("Mark")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.getACreature("Mark"));
 	}
 	
 	@Test 
@@ -50,15 +50,15 @@ public class CreatureEndPointTest {
 	
 	@Test
 	public void testDeleteCreature() {
-		Mockito.when(service.deleteCreature(1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.deleteCreature(1L));
-		Mockito.verify(service).deleteCreature(1L);
+		Mockito.when(service.deleteCreature("Mark")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.deleteCreature("Mark"));
+		Mockito.verify(service).deleteCreature("Mark");
 	}
 	
 	@Test
 	public void testUpdateCreature() {
-		Mockito.when(service.updateCreature(MOCK_VALUE2, 1L)).thenReturn(MOCK_VALUE);
-		assertEquals(MOCK_VALUE, endpoint.updateCreature(1L, MOCK_VALUE2));
+		Mockito.when(service.updateCreature(MOCK_VALUE2, "Mark")).thenReturn(MOCK_VALUE);
+		assertEquals(MOCK_VALUE, endpoint.updateCreature("Mark", MOCK_VALUE2));
 	}
 
 

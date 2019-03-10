@@ -60,27 +60,27 @@ public class MoveDBRepository implements MoveRepository{
 	}
 	
 	
-	public String getAMove(Long id) {
+	public String getAMove(String moveName) {
 		// TODO Auto-generated method stub
-		return util.getJSONForObject(manager.find(Move.class, id));
+		return util.getJSONForObject(manager.find(Move.class, moveName));
 	}
 	
 	@Transactional(REQUIRED)
-	public String updateMove(String move, Long id) {
+	public String updateMove(String move, String moveName) {
 		Move temp = new Move();
 		temp = util.getObjectForJSON(move, Move.class);
 		manager.persist(temp);
-		deleteMove(id);
+		deleteMove(moveName);
 		return "{\"message\": \"Move updated.\"}";
 	}
 
 	@Transactional(REQUIRED)
-	public String deleteMove(Long id) {
+	public String deleteMove(String moveName) {
 		// TODO Auto-generated method stub
-		Move moveInDB = util.getObjectForJSON(getAMove(id), Move.class);
+		Move moveInDB = util.getObjectForJSON(getAMove(moveName), Move.class);
 		
-		if (manager.contains(manager.find(Move.class, id))) {
-			manager.remove((manager.find(Move.class, id)));
+		if (manager.contains(manager.find(Move.class, moveName))) {
+			manager.remove((manager.find(Move.class, moveName)));
 		}
 		
 		return "{\"message\": \"Move deleted.\"}";

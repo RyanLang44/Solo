@@ -62,27 +62,27 @@ public class CreatureDBRepository implements CreatureRepository {
 	}
 	
 	
-	public String getACreature(Long id) {
+	public String getACreature(String charName) {
 		// TODO Auto-generated method stub
-		return util.getJSONForObject(manager.find(Creature.class, id));
+		return util.getJSONForObject(manager.find(Creature.class, charName));
 	}
 	
 	@Transactional(REQUIRED)
-	public String updateCreature(String creature, Long id) {
+	public String updateCreature(String creature, String charName) {
 		Creature temp = new Creature();
 		temp = util.getObjectForJSON(creature, Creature.class);
 		manager.persist(temp);
-		deleteCreature(id);
+		deleteCreature(charName);
 		return "{\"message\": \"Creature updated.\"}";
 	}
 
 	@Transactional(REQUIRED)
-	public String deleteCreature(Long id) {
+	public String deleteCreature(String charName) {
 		// TODO Auto-generated method stub
-		Creature creatureInDB = util.getObjectForJSON(getACreature(id), Creature.class);
+		Creature creatureInDB = util.getObjectForJSON(getACreature(charName), Creature.class);
 		
-		if (manager.contains(manager.find(Creature.class, id))) {
-			manager.remove((manager.find(Creature.class, id)));
+		if (manager.contains(manager.find(Creature.class, charName))) {
+			manager.remove((manager.find(Creature.class, charName)));
 		}
 		
 		return "{\"message\": \"Creature deleted.\"}";

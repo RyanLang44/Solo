@@ -37,21 +37,21 @@ public class MoveServiceImpl implements MoveService {
 	}
 
 	@Override
-	public String getAMove(Long id) {
+	public String getAMove(String moveName) {
 		// TODO Auto-generated method stub
-		return repo.getAMove(id);
+		return repo.getAMove(moveName);
 	}
 
 	@Override
-	public String updateMove(String move, Long id) {
+	public String updateMove(String move, String moveName) {
 		// TODO Auto-generated method stub
-		return repo.updateMove(move, id);
+		return repo.updateMove(move, moveName);
 	}
 
 	@Override
-	public String deleteMove(Long id) {
+	public String deleteMove(String moveName) {
 		// TODO Auto-generated method stub
-		return repo.deleteMove(id);
+		return repo.deleteMove(moveName);
 	}
 
 	public void setRepo(MoveRepository repo) {

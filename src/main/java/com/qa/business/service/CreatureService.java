@@ -6,10 +6,10 @@ public interface CreatureService {
 	
 	String getAllCreatures();
 	
-	String getACreature(Long id);
+	String getACreature(String charName);
 	
-	String updateCreature(String creature, Long id);
+	String updateCreature(String creature, String charName);
 	
-	String deleteCreature(Long id);
+	String deleteCreature(String charName);
 
 }
