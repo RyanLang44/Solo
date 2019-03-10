@@ -21,6 +21,11 @@ public class CreatureServiceImpl implements CreatureService {
 	public String addCreature(String creature) {
 		// TODO Auto-generated method stub
 		Creature newChar = util.getObjectForJSON(creature, Creature.class);
+		
+		if(newChar.getHitPoints() + newChar.getMagicPoints() + newChar.getAttack() + newChar.getMagic() + newChar.getSpeed() > 60) {
+			return "This creature is too strong!";
+		}
+		
 		return repo.createCreature(creature);
 	}
 

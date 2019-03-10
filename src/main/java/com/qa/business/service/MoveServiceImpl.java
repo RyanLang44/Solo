@@ -20,7 +20,13 @@ public class MoveServiceImpl implements MoveService {
 	@Override
 	public String addMove(String move) {
 		// TODO Auto-generated method stub
-		Move newChar = util.getObjectForJSON(move, Move.class);
+		Move newMove = util.getObjectForJSON(move, Move.class);
+		int powerFormula = ((newMove.getDamage()+ newMove.getHealing())*newMove.getNoOfTargets())- newMove.getMpCost();
+		
+		if (powerFormula > 100) {
+			return "This move is too powerful!";
+		}
+		
 		return repo.createMove(move);
 	}
 
