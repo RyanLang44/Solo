@@ -26,7 +26,7 @@ class CreateCreature extends Component{
         }
     
         this.getMove = (e) => {
-            axios.get('http://localhost:8080/SoloProject/api/move/getAMove/' + this.state.MoveID)
+            axios.get('http://35.197.234.211:8888/SoloProject/api/move/getAMove/' + this.state.MoveID)
             .then(response => {
                 console.log(response.data);
                 this.setState({
@@ -47,7 +47,7 @@ class CreateCreature extends Component{
         }
 
         this.addRequest = (e) => {
-            axios.post('http://localhost:8080/SoloProject/api/creature/createCreature', {
+            axios.post('http://35.197.234.211:8888/SoloProject/api/creature/createCreature', {
                 "charName" : document.getElementById('name').value,
                 "hitPoints": document.getElementById('hitPoints').value,
                 "magicPoints": document.getElementById('magicPoints').value,

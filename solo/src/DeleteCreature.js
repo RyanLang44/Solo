@@ -18,7 +18,7 @@ class DeleteCreature extends Component{
     }
 
     deleteCreature = (e) => {
-        axios.get('http://localhost:8080/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
+        axios.get('http://35.197.234.211:8888/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
         .then(response =>  {
             console.log(response.data);
             this.setState({
@@ -35,7 +35,7 @@ class DeleteCreature extends Component{
     
       
             document.getElementById('testid').innerHTML =  wordnice;  
-            axios.delete('http://localhost:8080/SoloProject/api/creature/deleteCreature/' + this.state.CreatureID);
+            axios.delete('http://35.197.234.211:8888/SoloProject/api/creature/deleteCreature/' + this.state.CreatureID);
             document.getElementById('deletedMessage').innerHTML = "Creature Deleted";
 
         });

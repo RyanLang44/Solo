@@ -19,7 +19,7 @@ class GetAMove extends Component{
     }
 
     getMove = (e) => {
-        axios.get('http://localhost:8080/SoloProject/api/move/getAMove/' + this.state.MoveID)
+        axios.get('http://35.197.234.211:8888/SoloProject/api/move/getAMove/' + this.state.MoveID)
         .then(response => {
             console.log(response.data);
             this.setState({

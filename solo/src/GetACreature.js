@@ -19,7 +19,7 @@ class GetACreature extends Component{
     }
 
     getCreature = (e) => {
-        axios.get('http://localhost:8080/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
+        axios.get('http://35.197.234.211:8888/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
         .then(response =>  {
             console.log(response.data);
             this.setState({

@@ -19,7 +19,7 @@ class UpdateCreature extends Component{
     }
 
     updateCreature = (e) => {
-        axios.get('http://localhost:8080/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
+        axios.get('http://35.197.234.211:8888/SoloProject/api/creature/getACreature/' + this.state.CreatureID)
         .then(response =>  {
             console.log(response.data);
             this.setState({
@@ -30,10 +30,10 @@ class UpdateCreature extends Component{
     
       
             document.getElementById('testid').innerHTML =  wordnice;  
-            axios.delete('http://localhost:8080/SoloProject/api/creature/deleteCreature/' + this.state.CreatureID);
+            axios.delete('http://35.197.234.211:8888/SoloProject/api/creature/deleteCreature/' + this.state.CreatureID);
             
 
-            axios.post('http://localhost:8080/SoloProject/api/creature/createCreature', {
+            axios.post('http://35.197.234.211:8888/SoloProject/api/creature/createCreature', {
                 "charName" : document.getElementById('name').value,
                 "hitPoints": document.getElementById('hitPoints').value,
                 "magicPoints": document.getElementById('magicPoints').value,

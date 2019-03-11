@@ -22,7 +22,7 @@ class CreateMove extends Component{
     
       
         this.addRequest = (e) => {
-            axios.post('http://localhost:8080/SoloProject/api/move/createMove', {
+            axios.post('http://35.197.234.211:8888/SoloProject/api/move/createMove', {
                 "moveName" : document.getElementById('moveName').value,
                 "desc": document.getElementById('desc').value,
                 "damage": document.getElementById('damage').value,

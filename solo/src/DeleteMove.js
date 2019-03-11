@@ -18,7 +18,7 @@ class DeleteMove extends Component{
     }
 
     deleteMove = (e) => {
-        axios.get('http://localhost:8080/SoloProject/api/move/getAMove/' + this.state.moveID)
+        axios.get('http://35.197.234.211:8888/SoloProject/api/move/getAMove/' + this.state.moveID)
         .then(response =>  {
             console.log(response.data);
             this.setState({
@@ -35,7 +35,7 @@ class DeleteMove extends Component{
     
       
             document.getElementById('testid').innerHTML =  wordnice;  
-            axios.delete('http://localhost:8080/SoloProject/api/move/deleteMove/' + this.state.moveID);
+            axios.delete('http://35.197.234.211:8888/SoloProject/api/move/deleteMove/' + this.state.moveID);
             document.getElementById('deletedMessage').innerHTML = "move Deleted";
 
         });
